@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/suryansh54/exyconn-portal-api-node/issues"
   },
-  "homepage": "https://github.com/suryansh54/exyconn-portal-api-node#readme"
+  "homepage": "https://github.com/suryansh54/exyconn-portal-api-node#readme",
+  "engines": {
+    "node": "10.x"
+  }
 }
