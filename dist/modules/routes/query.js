@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express = require('express');
+var contact_1 = require("../controllers/contact");
+var token_1 = require("../utils/token");
+var router = express.Router();
+router.route('/contact/submitquery').post(token_1.verifyToken, contact_1.submitContactQuery);
+router.route('/contact/queryList').get(token_1.verifyToken, contact_1.getContactQueryList);
+router.route('/contact/queryById').post(token_1.verifyToken, contact_1.getContactQueryById);
+exports.default = router;

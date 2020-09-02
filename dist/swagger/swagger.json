@@ -1,0 +1,784 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "All Authentication APIs",
+    "version": "1.0.0",
+    "title": "Nat Prot APIs",
+    "contact": {
+      "email": "suryanshsrivastava8791@gmail.com"
+    }
+  },
+  "host": "nat-prot-testing.uc.r.appspot.com",
+  "basePath": "/v1/api",
+  "tags": [
+    {
+      "name": "Authentication",
+      "description": "All Authentication APIs"
+    },
+    {
+      "name": "User",
+      "description": "All User APIs"
+    },
+    {
+      "name": "Admin",
+      "description": "All Admin APIs"
+    },
+    {
+      "name": "oAuth",
+      "description": "All oAuth APIs"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/register": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Register",
+        "description": "",
+        "operationId": "register",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Register user",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Register"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        }
+      }
+    },
+    "/token": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Login",
+        "description": "",
+        "operationId": "token",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Login User",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Token"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        }
+      }
+    },
+    "/forgot-password": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Forgot Password (Reset password step 1)",
+        "description": "",
+        "operationId": "forgot-password",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Forgot password",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ForgotPassword"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        }
+      }
+    },
+    "/validate-otp": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Validate OTP (Reset password step 2)",
+        "description": "",
+        "operationId": "validate-otp",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Validate OTP",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ValidateOTP"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        }
+      }
+    },
+    "/change-password": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Change Password (Reset password step 3)",
+        "description": "Change Password",
+        "operationId": "change-password",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Change Password",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ChangePassword"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        }
+      }
+    },
+    "/user": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Get user details",
+        "description": "Get user details",
+        "operationId": "user-info",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Delete user details",
+        "description": "Get user details",
+        "operationId": "delete-user",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update user details",
+        "description": "Update user details",
+        "operationId": "update-user",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Update user",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateUser"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
+      }
+    },
+    "/validate-password": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Validate password (In case user wants to delete own account or any sensitive activity)",
+        "description": "Validate password",
+        "operationId": "validate-password",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Change Password",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ValidatePassword"
+            }
+          }
+        ],
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        }
+      }
+    },
+    "/admin/user/all": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get All Users",
+        "description": "Get All Users",
+        "operationId": "get-all-user",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        }
+      }
+    },
+    "/oauth/google": {
+      "post": {
+        "tags": [
+          "oAuth"
+        ],
+        "summary": "Get All Users",
+        "description": "Get All Users",
+        "operationId": "oauth-google",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "oauthtoken": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Update user",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OAuthGoogle"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        }
+      }
+    },
+    "/oauth/facebook": {
+      "post": {
+        "tags": [
+          "oAuth"
+        ],
+        "summary": "Get All Users",
+        "description": "Get All Users",
+        "operationId": "oauth-facebook",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "oauthtoken": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Update user",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OAuthFacebook"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        }
+      }
+    },
+    "/contact/submitquery": {
+      "post": {
+        "tags": [
+          "Contact"
+        ],
+        "summary": "Query",
+        "description": "",
+        "operationId": "contact/submit-query",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Query Message",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SubmitQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
+      }
+    },
+    "/contact/queryList": {
+      "get": {
+        "tags": [
+          "Contact"
+        ],
+        "summary": "Query List",
+        "description": "",
+        "operationId": "contact/query-List",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
+      }
+    },
+    "/contact/queryById": {
+      "post": {
+        "tags": [
+          "Contact"
+        ],
+        "summary": "get Particular query by incidentID",
+        "description": "",
+        "operationId": "contact/query-by-ID",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "particular Query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/queryById"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
+      }
+    },
+    "/createAlternateNumberOTP": {
+      "post": {
+        "tags": [
+          "Contact"
+        ],
+        "summary": "creating OTP for alternate number",
+        "description": "",
+        "operationId": "contact/alternate-number-OTP",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "alternate mobile number",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/createAlternateNumberOTP"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
+      }
+    },
+    "/validateAlternateNumberOTP": {
+      "post": {
+        "tags": [
+          "Contact"
+        ],
+        "summary": "validate OTP fro alternate number",
+        "description": "",
+        "operationId": "contact/validate-alternate-number-OTP",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "otp",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/validateAlternateNumberOTP"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid response"
+          },
+          "401": {
+            "description": "Auth error"
+          }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "token": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    },
+    "oauthtoken": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "Register": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "int64"
+        },
+        "mobile": {
+          "type": "string",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string",
+          "format": "int64"
+        },
+        "password": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "Token": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "int64"
+        },
+        "mobile": {
+          "type": "string",
+          "format": "int64"
+        },
+        "password": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "UpdateUser": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "ForgotPassword": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "ValidateOTP": {
+      "type": "object",
+      "properties": {
+        "otp": {
+          "type": "string",
+          "format": "int64"
+        },
+        "email": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "ChangePassword": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "int64"
+        },
+        "newPass": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "ValidatePassword": {
+      "type": "object",
+      "properties": {
+        "password": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "OAuthGoogle": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "OAuthFacebook": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "SubmitQuery": {
+      "type": "object",
+      "properties": {
+        "subject": {
+          "type": "string",
+          "format": "int64"
+        },
+        "description": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "queryById": {
+      "type": "object",
+      "properties": {
+        "incidentID": {
+          "type": "number",
+          "format": "int64"
+        }
+      }
+    },
+    "createAlternateNumberOTP": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "validateAlternateNumberOTP": {
+      "type": "object",
+      "properties": {
+        "otp": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    }
+  }
+}
