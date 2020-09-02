@@ -1,0 +1,67 @@
+pipeline {
+  agent any
+  parameters {
+    choice(name: 'Environment', choices: ['Staging', 'Testing', 'Production'], description: 'Pick for deployment')
+    choice(name: 'User', choices: ['Suryansh', 'Rahul', 'Shriniwas', 'Kuldeep'], description: 'Pick user')
+  }
+   stages {
+      stage('Process started') {
+        steps {
+          echo 'Starting process...'
+          notifyBuild('STARTED', '#F2DD05')
+        }
+      }
+      stage('Compile stage') {
+        steps {
+          sh 'npm install'
+          notifyBuild('PACKAGE INSTALLATION', '#F6B917')
+        }
+      }
+      stage('Testing stage') {
+        steps {
+          sh 'npm run test'
+          notifyBuild('UNIT TESTING', '#F8F801')
+        }
+      }
+      stage('Build stage') {
+        steps {
+            sh 'npm run build'
+            notifyBuild('BUILD STARTED', '#009B95')
+          }
+      }
+      stage('Deploying') {
+        steps {
+          echo "Build Trigger: ${params.Environment} build trigger by ${params.User} from ${params.Select_Branch}"
+          script {
+            if( params.Environment == 'Staging' ) {
+              notifyBuild('STAGING DEPLOYMENT IN PROCESS', '#00BE7D')
+              sh 'npm run deploy:staging'
+            } 
+            if( params.Environment == 'Testing' ) {
+              notifyBuild('STAGING DEPLOYMENT IN PROCESS', '#00BE7D')
+              sh 'npm run deploy:testing'
+            } 
+            if( params.Environment == 'Production' ) {
+              notifyBuild('STAGING DEPLOYMENT IN PROCESS', '#00BE7D')
+              sh 'npm run deploy:production'
+            }
+          }
+         }
+      }
+      stage('Completed') {
+        steps {
+          notifyBuild('BUILD SUCCESSFULLY', '#004616')
+          echo 'Completed successfully.'
+        }
+      }
+   }
+}
+
+def notifyBuild(String buildStatus = 'STARTED', String colorCode = '#FF0000') {
+  // Default values
+  def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+  def summary = "${subject} (${env.BUILD_URL})"
+
+  // Send notifications
+  slackSend (color: colorCode, message: summary)
+}

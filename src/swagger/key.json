@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "nat-prot-testing",
+  "private_key_id": "acb9ae147fb7c0d443607798a6f973214cf1af60",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDHwQiMfW05uhSl\n0PwAKI5HCYpzy4avfPCmZJ0LPwPW8KBUY6J9jVy4DLpsCW2oP6cZUyt4FPd3SnNK\nfuJJD6KzDN3lsJR+MH5nR/rwMXYWtpMqmkZUcc1bb3jbOob+LxP4SU5xPUExBZhe\nkEpSb+X+aQnhZHJNZbBv/aZTl19dBo8AQesn63dxA4Nx5dncwsLjpfdcIoKmF5Tx\nE5i+eJC3eoda/c/QItRR3leF8ju9q3xuyikBYLecshnUFJT3rcV7cNTrhP0bFQkn\nBj8bsuvex0OLmEVDu07cZ/Ld3snNao4o9A9FaC5k68zfj/4jO4aBZlj+FiUuuw45\n8+KodjHLAgMBAAECggEAXPyzKhNJQVIqQnZimQBIGzGJzhW0gQS8UfkMUivncata\nN26aObAQtWzXa2uILIZVFyjsV14LRPDXcppWZIRuzML0mPP2bDfO3+1WF3Iu8qvT\nHkXq72x6mFHwBL3eEX2A4lfduEE3k8ZzA7JPpsiIXEIxY0cLHpRz6e49+zPAJOES\nF6A99k9db5LxJ79LNCgdTlAb9LW6kB1B53AiwcoUpUPVNZ03hsZMKjtZvCgaI82Z\nBNOqfHFa4PDRKhlmT4eooDBe2fQ46Ql1hsfFbgSiX7yR/sAWPqiDzT1WpialRDL9\nZ3a4Oi3o15xnDWQ2NFZQxLJV8LdF9/Mcohh1QRZHYQKBgQDo2/TZqcos/N1hcNQJ\nzSRPDSvr9iVdvQ+RZCuwECUo/ZCzcpdE1OMy0p0HeTv34qHXqmlFxyxzlZosnr7c\nkMgiyzStdYodvhZnxuRYOv1+yqaYa00LnwFQ+5i008ZECHiADWfGy+dflOqcgwsC\nahmQ2obJ/LPSylBh8Lh8QB2KDQKBgQDbmt3SGcJ40NorUAtPWA7Q03Gq9ZllK/Yb\nV5ZtpjIwYhHiMcDStbhfeGl06Hrejq34hmDThJ54kjkJnQdxgUM2nEn9r8DH9Tm3\nfimE9Ci37OYmcxTGQfSKvFCaR75nzjUSJfxTV5Wo8EAIo5UqPVc3yHq1E3ckplRH\nv7ULgC5tNwKBgBkaRS4F0MbCx7bOa/1WgRiIifiZA3Q0gm4hB1imlOrzUtsVelsw\nPAHplIYOurlBVEMkms6r5w3azdELl/W9IeYmU9pzNl14dX/ggBNG4Lb/b7A0uQyM\nqp6pUNAFmHUTGLJtP4e9yYaTTitrMQ+kknb8J9W0iUorBzlXsvuqCcUtAoGBALa5\ntqayPmmOxmnRsYd0qudBeMwajWdsW9xGVemopwwxHdZLNbld8SqnI4BeTJZQvBsV\nnQ2CxOVoLcN9AIuGVenjw4Ets0fuGPdAJ8Xz7smTebE2gmuwx4yEwsCMv7baErim\nGL00HFg0h+NoUZ6S6baFvuxaZQF+0JPexQLrxjWjAoGAWIgLvhvxKQVUY6gr4qFO\n6AX77IYNxSiUOkg9NKiXroBc1WVMXczIsZSrPL6ybZB2yr668QJIacNQ7BgQF84y\nVP8ZnIEv5BgYDFVw4trE7k0/UJ6WCL6866G2F6SAsP+0nrimmSEiIQ6LUAEtBYdU\nbP4xTYm99o13I/7N4y8R7+Q=\n-----END PRIVATE KEY-----\n",
+  "client_email": "jenkins-deployment@nat-prot-testing.iam.gserviceaccount.com",
+  "client_id": "108138200625711556155",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/jenkins-deployment%40nat-prot-testing.iam.gserviceaccount.com"
+}
