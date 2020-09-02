@@ -1,10 +1,8 @@
-const express = require('express')
-const path = require('path')
 const PORT = process.env.PORT || 5000
+const http = require('http');
 
-express()
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+//create a server object:
+http.createServer(function (req, res) {
+  res.write('Hello World! Suryansh'); //write a response to the client
+  res.end(); //end the response
+}).listen(PORT); //the server object listens on port 8080
