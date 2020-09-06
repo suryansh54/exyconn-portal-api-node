@@ -1,5 +1,4 @@
 enum Messages {
-  WELCOME = 'Welcome to backend API',
   ALL_USER_LIST = 'All user list',
   ALL_USER_DELETED = 'All user deleted',
   CONNECTED_TO_DATABASE = 'Connection to database established',
@@ -7,12 +6,17 @@ enum Messages {
   EMAIL_EXISTS = 'Email already exists',
   EMAIL_NOT_FOUND = 'Email not found',
   EMAIL_NOT_IN_DB = 'Email is not in our database',
+  EXPENSE_CREATED = 'Expense Record Created Successfully',
+  EXPENSE_CREATION_FAILED = 'Expense Record Creation Failed',
   FAILED_OTP_VERIFICATION = 'Failed in OTP verification',
+  FAQ_CREATED = 'FAQ created',
   FILE_UPLOADED = 'File uploaded successfully',
+  INCOME_CREATED = 'Income Record Created Successfully',
+  INCOME_CREATION_FAILED = 'unable to create Income Record',
   INVALID_FORMAT = 'Invalid format',
   INVALID_INCIDENT_ID = 'Invalid Incident ID',
   INVALID_NUMBER = 'Invalid mobile number',
-  INVALID_OTP = 'OTP verification unsuccessful',
+  INVALID_OTP = 'Invalid OTP',
   INVALID_PASSWORD = 'Invalid Password',
   INVALID_TOKEN = 'Invalid token',
   INVALID_TOKEN_TYPE = 'Invalid token type, It should be Bearer',
@@ -22,7 +26,10 @@ enum Messages {
   NEW_USER_REG_FAIL = 'Unable to create new user',
   NO_AUTHORIZATION_HEADER = 'No authorization header in request',
   NO_FILE = 'No file received',
+  NO_MOBILE_ENTERED = 'No mobile number entered',
+  NO_OTP_ENTERED = 'No otp entered',
   NO_QUERY_EXIST = 'No query found in database',
+  NO_RECORD_FOUND = 'No record Found',
   NO_REQUEST_BODY = 'No Request body',
   NO_SAVED = 'Sorry! we do not have any OTP information for such number',
   NO_USER_EXIST = 'No user found in database',
@@ -41,7 +48,11 @@ enum Messages {
   PORT_LISTEN = 'Example app listening on port',
   QUERY_FOUND = 'Your Queries',
   QUERY_SUBMITTED = 'Your query submitted Successfully',
+  RECORD_DELETED = 'Record has been Deleted',
+  RECORD_UPDATED = 'Record has been Updated',
+  RECORD_FOUND = 'Transcation Records',
   SAME_MOBILE_NUMBER = 'Alternate number and the primary number cannot be same',
+  SINGLE_RECORD_FOUND = 'Transcation Record',
   SUCCESS_LOGIN = 'Logged In successfully',
   TOKEN_API_VALIDATION = 'Invalid data while log in',
   UNABLE_TO_CREATE_QUERY = 'Unable to create Query',
@@ -56,6 +67,7 @@ enum Messages {
   USER_LOGGED_IN_VIA_GOOGLE = 'User successfully logged in via google',
   USER_UPDATED_SUCCESSFULLY = 'User details updated successfully',
   USER_VERIFIED = 'User veriified successfully',
+  WELCOME = 'Welcome to backend API',
 }
 
 enum StatusMessages {
@@ -67,6 +79,8 @@ enum StatusCode {
   UNAUTHORIZED = 401,
   NOT_FOUND = 404,
   SUCCESS = 200,
+  BAD_REQUEST = 400,
+  CREATED = 202,
 }
 
 export { Messages, StatusCode, StatusMessages };

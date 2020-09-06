@@ -47,7 +47,7 @@ const verifyToken = async (req: any, res: any, next: any) => {
             return res.status(401).json(
               {
                 status: StatusMessages.ERROR,
-                message: error.message
+                message: error.message,
               }
             );
           } else {

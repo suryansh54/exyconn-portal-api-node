@@ -117,7 +117,8 @@ const signup: RequestHandler = async (req: Request, res: Response, next: NextFun
 			} catch (error) {
 				return res.status(400).json({
 					status: StatusMessages.ERROR,
-					message: Messages.NEW_USER_REG_FAIL
+					message: Messages.NEW_USER_REG_FAIL,
+					error: error
 				});
 			}
 		}

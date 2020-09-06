@@ -32,6 +32,7 @@ import oauthModule from './modules/routes/oauth';
 import userModule from './modules/routes/user';
 import queryModule from './modules/routes/query';
 import otpVerification from './modules/routes/otpVerification';
+import financeModule from './modules/routes/finance';
 
 // Reporting Modules
 const path = require('path');
@@ -65,6 +66,7 @@ app.use('/v1/api/oauth', oauthModule);
 app.use('/v1/api', userModule);
 app.use('/v1/api', queryModule);
 app.use('/v1/api', otpVerification);
+app.use('/v1/api', financeModule);
 app.use('/files', express.static('uploads'));
 /* -----------Routes-----------|START---- */
 

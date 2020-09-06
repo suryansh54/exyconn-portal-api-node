@@ -10,7 +10,11 @@ const roles = (function () {
     .extend('basic')
     .updateAny('profile')
     .deleteAny('profile')
-    .read('getAllUsers');
+    .read('getAllUsers')
+    .create('transaction')
+    .readAny('transaction')
+    .deleteAny('transaction')
+    .updateAny('transaction');
   return ac;
 })();
 

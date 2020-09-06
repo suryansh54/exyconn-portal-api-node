@@ -19,8 +19,8 @@ const userSchema = new Schema({
 	},
 	alternate_no : {
 		type: String,
-		unique: true,
-		trim: true
+		// unique: true,
+		// trim: true
 	},
 	password: {
 		type: String,

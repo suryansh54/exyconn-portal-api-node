@@ -1,4 +1,3 @@
-import { NextFunction } from 'express';
 const mongoose = require('mongoose');
 const contactSchema  = new mongoose.Schema({
     incidentID: {
