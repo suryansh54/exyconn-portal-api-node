@@ -3,12 +3,12 @@ const expenseSchema = new mongoose.Schema({
   expenseDate: {
     type: String,
   },
-  expenseDeductedFrom: {
+  paymentThrough: {
     type: String
   },
-  expenseDestination: {
-    type: String,
-  },
+  // expenseDestination: {
+  //   type: String,
+  // },
   expenseMode: {
     type: String
   },

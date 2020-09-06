@@ -4,8 +4,8 @@ class ExpenseResponseModel {
     this.expenseId = res._id;
     this.expenseDate = res.expenseDate;
     this.expenseSource = res.expenseSource;
-    this.expenseDeductedFrom = res.expenseDeductedFrom;
-    this.expenseDestination = res.expenseDestination;
+    this.paymentThrough = res.paymentThrough;
+ //   this.expenseDestination = res.expenseDestination;
     this.expenseAmount = res.expenseAmount;
     this.expenseAddedBy = res.expenseAddedBy;
     this.expenseMode = res.expenseMode;
@@ -20,8 +20,8 @@ class ExpenseRequestModel {
   constructor(req: any, userId: any) {
     this.expenseDate = req.expenseDate;
     this.expenseSource = req.expenseSource;
-    this.expenseDeductedFrom = req.expenseDeductedFrom;
-    this.expenseDestination = req.expenseDestination;
+    this.paymentThrough = req.paymentThrough;
+  //  this.expenseDestination = req.expenseDestination;
     this.expenseAmount = req.expenseAmount;
     this.expenseAddedBy = userId;
     this.expenseMode = req.expenseMode ? req.expenseMode : '';
@@ -37,8 +37,8 @@ class ExpenseUpdateRequestModel {
     if (req.expenseName) {this.expenseName = req.expenseName; }
     if (req.expenseDate) { this.expenseDate = req.expenseDate; }
     if (req.expenseSource) { this.expenseSource = req.expenseSource; }
-    if (req.expensedeductedFrom) {this.expenseDeductedFrom = req.expenseDeductedFrom; }
-    if (req.expenseDestination) { this.expenseDestination = req.expenseDestination; }
+    if (req.paymentThrough) {this.paymentThrough = req.paymentThrough; }
+   // if (req.expenseDestination) { this.expenseDestination = req.expenseDestination; }
     if (req.expenseAmount) { this.expenseAmount = req.expenseAmount; }
     this.expenseAddedBy = userId;
     if (req.expenseMode) { this.expenseMode = req.expenseMode; }

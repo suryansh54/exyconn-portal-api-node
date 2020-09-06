@@ -41,12 +41,16 @@ const validateAlternateNumberOTPBody = (reqBody: any) => {
 const validateExpenseBody = (reqBody: any) => {
   const schema = Joi.object({
     expenseDate: Joi.string().required(),
-    expenseDeductedFrom: Joi.string().required(),
-    expenseDestination: Joi.string().required(),
-    expenseAmount: Joi.string().required(),
+    paymentThrough: Joi.string().required(),
+   // expenseDestination: Joi.string().required(),
+    expenseAmount: Joi.required(),
   //  expenseMode: Joi.string().required(),
     expenseName: Joi.string().required(),
-    expenseType: Joi.string().required()
+    expenseType: Joi.string().required(),
+    expenseDescription: Joi.string(),
+    expenseConfirm: Joi.boolean(),
+    transactionPassword: Joi.string(),
+    virtualSign: Joi.boolean()
   });
   return schema.validate(reqBody);
 };
@@ -60,7 +64,11 @@ const validateIncomeBody = (reqBody: any) => {
     incomeDestination: Joi.string().required(),
   //  incomeMode: Joi.string().required(),
     incomeName: Joi.string().required(),
-    incomeAmount: Joi.string().required(),
+    incomeAmount: Joi.required(),
+    incomeDescription: Joi.string(),
+    incomeConfirm: Joi.boolean(),
+    transactionPassword: Joi.string(),
+    virtualSign: Joi.boolean()
   });
   return schema.validate(reqBody);
 };
