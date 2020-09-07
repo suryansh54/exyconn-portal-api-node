@@ -12,6 +12,8 @@ class ExpenseResponseModel {
     this.expenseType = res.expenseType;
     this.expenseName = res.expenseName;
     this.expenseDescription = res.expenseDescription;
+    this.transactionId = res.transactionId;
+    this.expenseConfirm = res.expenseConfirm;
   }
 }
 
@@ -28,6 +30,8 @@ class ExpenseRequestModel {
     this.expenseType = req.expenseType;
     this.expenseName = req.expenseName;
     this.expenseDescription = req.expenseDescription ? req.expenseDescription : '';
+    this.transactionId = req.transactionId;
+    this.expenseConfirm = req.expenseConfirm;
   }
 }
 
@@ -44,6 +48,8 @@ class ExpenseUpdateRequestModel {
     if (req.expenseMode) { this.expenseMode = req.expenseMode; }
     if (req.expenseType) { this.expenseType = req.expenseType; }
     if (req.expenseDescription) { this.expenseDescription = req.expenseDescription; }
+    if (req.transactionId) { this.transactionId = req.transactionId; }
+    if (req.expenseConfirm) { this.expenseConfirm = req.expenseConfirm; }
   }
 }
 

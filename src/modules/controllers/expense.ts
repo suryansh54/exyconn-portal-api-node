@@ -37,7 +37,8 @@ const createExpenseRecord: RequestHandler = async (
     }).catch((err: any) => {
       return res.status(StatusCode.BAD_REQUEST).json({
         status: StatusMessages.ERROR,
-        message: Messages.EXPENSE_CREATION_FAILED
+        message: Messages.EXPENSE_CREATION_FAILED,
+        data: [err]
       });
     });
   }

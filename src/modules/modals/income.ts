@@ -10,6 +10,8 @@ class IncomeResponseModel {
     this.incomeMode = res.incomeMode;
     this.incomeName = res.incomeName;
     this.incomeDescription = res.incomeDescription;
+    this.transactionId = res.transactionId;
+    this.incomeConfirm = res.incomeConfirm;
   }
 }
 
@@ -24,6 +26,8 @@ class IncomeRequestModel {
     this.incomeMode = req.incomeMode ? req.incomeMode : '';
     this.incomeName = req.incomeName;
     this.incomeDescription = req.incomeDescription ? req.incomeDescription : '';
+    this.transactionId = req.transactionId;
+    this.incomeConfirm = req.incomeConfirm;
   }
 }
 
@@ -39,6 +43,12 @@ class IncomeUpdateRequestModel {
     if (req.incomeName) { this.incomeName = req.incomeName; }
     if (req.incomeDescription) {
       this.incomeDescription = req.incomeDescription;
+    }
+    if (req.transactionId) {
+      this.transactionId = req.transactionId;
+    }
+    if (req.incomeConfirm) {
+      this.incomeConfirm = req.incomeConfirm;
     }
   }
 }

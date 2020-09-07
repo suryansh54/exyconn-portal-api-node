@@ -50,7 +50,8 @@ const validateExpenseBody = (reqBody: any) => {
     expenseDescription: Joi.string(),
     expenseConfirm: Joi.boolean(),
     transactionPassword: Joi.string(),
-    virtualSign: Joi.boolean()
+    virtualSign: Joi.boolean(),
+    transactionId: Joi.string().required()
   });
   return schema.validate(reqBody);
 };
@@ -68,7 +69,8 @@ const validateIncomeBody = (reqBody: any) => {
     incomeDescription: Joi.string(),
     incomeConfirm: Joi.boolean(),
     transactionPassword: Joi.string(),
-    virtualSign: Joi.boolean()
+    virtualSign: Joi.boolean(),
+    transactionId: Joi.string().required()
   });
   return schema.validate(reqBody);
 };
