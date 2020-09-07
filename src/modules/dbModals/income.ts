@@ -31,7 +31,7 @@ const incomeSchema = new mongoose.Schema({
     type: String
   },
   incomeConfirm: {
-    type: String
+    type: Boolean
   }
 });
 
